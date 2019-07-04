@@ -76,6 +76,12 @@ module.exports = function (ctx) {
             formatter: require('eslint').CLIEngine.getFormatter('stylish')
           }
         })
+      },
+      chainWebpack (chain) {
+        chain.module.rule('pug')
+          .test(/\.pug$/)
+          .use('pug-plain-loader')
+            .loader('pug-plain-loader')
       }
     },
 
