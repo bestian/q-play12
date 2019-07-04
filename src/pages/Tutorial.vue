@@ -4,7 +4,10 @@
       q-toolbar-title
         | {{$t('use_all_four_cards_to_make_12')}}
     q-toolbar
-      q-toolbar-title {{ $t(hints[step]) }}
+      q-chat-message(
+        :name="$t('John')"
+        avatar="../assets/john.png"
+        :text="[$t(hints[step])]")
     q-toolbar(v-if = "lastWork")
       q-toolbar-title {{lastWork}}
     .q-pa-md
@@ -81,10 +84,7 @@ export default {
     iWin: function () {
       this.win = true
       this.wins++
-      if (this.wins > this.maxWin12) {
-        this.$emit('updateMaxWin12', this.wins)
-      }
-      setTimeout(this.reset, 2000)
+      setTimeout(this.reset, 3000)
     },
     reset: function () {
       console.log('reset')

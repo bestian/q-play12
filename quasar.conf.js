@@ -38,6 +38,7 @@ module.exports = function (ctx) {
         'QCard',
         'QCardSection',
         'QCardActions',
+        'QChatMessage',
         'QDrawer',
         'QPageContainer',
         'QPage',
