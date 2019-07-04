@@ -13,6 +13,13 @@ export default {
   success: '成功',
   Welcome: '歡迎來玩湊12',
   Tutorial: '進入教程',
+  'click_4': '先按4',
+  'click_-3': '再按-3',
+  'click_1': '按1',
+  'click_*2': '按×2',
+  'click_2': '按2',
+  'click_*6': '按×6',
+  'tutorial_end': '教程完畢',
   Play12: '玩湊12',
   play12: '湊12',
   play24: '湊24',
@@ -21,5 +28,7 @@ export default {
   'click_a_card': '請按一張牌',
   'click_an_operator': '請按其他牌下方的加減乘除來運算',
   reset: '重玩一局',
-  'good!': '讚!'
+  'good!': '讚!',
+  maxWins: '連勝',
+  'maxWinsRecord': '連勝記錄：'
 }

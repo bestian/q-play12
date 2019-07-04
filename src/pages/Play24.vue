@@ -44,6 +44,7 @@ import win from '../components/win'
 export default {
   name: 'Play12',
   components: { win },
+  props: ['maxWin24'],
   data () {
     return {
       lastWork: '',
@@ -79,6 +80,9 @@ export default {
     iWin: function () {
       this.win = true
       this.wins++
+      if (this.wins > this.maxWin24) {
+        this.$emit('updateMaxWin24', this.wins)
+      }
       setTimeout(this.reset, 2000)
     },
     reset: function () {

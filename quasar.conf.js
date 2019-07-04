@@ -34,6 +34,7 @@ module.exports = function (ctx) {
       components: [
         'QLayout',
         'QHeader',
+        'QFooter',
         'QCard',
         'QCardSection',
         'QCardActions',
@@ -58,7 +59,8 @@ module.exports = function (ctx) {
 
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'LocalStorage'
       ]
     },
 

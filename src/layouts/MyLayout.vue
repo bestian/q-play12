@@ -32,7 +32,14 @@
           q-item-section
             | {{$t('play24')}}
     q-page-container
-      router-view
+      router-view(:maxWin12="maxWin12", :maxWin24="maxWin24", @updateMaxWin12 = "updateMaxWin12", @updateMaxWin24 = "updateMaxWin24")
+    q-footer(v-if = "maxWin12 || maxWin24")
+      q-toolbar
+        q-toolbar-title
+          | {{$t('maxWinsRecord')}}
+          | 12: {{maxWin12}}{{$t('maxWins')}}
+          | &nbsp;&nbsp;&nbsp;
+          | 24: {{maxWin24}}{{$t('maxWins')}}
 </template>
 
 <script>
@@ -47,14 +54,46 @@ export default {
         { label: '繁體中文', value: 'zh-TW' },
         { label: '簡体中文', value: 'zh-CN' },
         { label: 'US English', value: 'en-us' }
-      ]
+      ],
+      maxWin12: 0,
+      maxWin24: 0
     }
   },
   methods: {
-    openURL
+    openURL,
+    updateMaxWin12: function (n) {
+      this.maxWin12 = n
+      this.setLocal('maxWin12')
+    },
+    updateMaxWin24: function (n) {
+      this.maxWin24 = n
+      this.setLocal('maxWin24')
+    },
+    getLocal: function (n) {
+      console.log('get:' + n)
+      this[n] = JSON.parse(this.$q.localStorage.getItem(n))
+    },
+    setLocal: function (n) {
+      console.log('set:' + n)
+      this.$q.localStorage.set(n, JSON.stringify(this[n]))
+      // console.log(this.$q.localStorage.getItem(n))
+    }
+  },
+  mounted () {
+    // console.log(this.$q.localStorage.getItem(n))
+    if (this.$q.localStorage.getItem('maxWin12')) {
+      this.getLocal('maxWin12')
+    }
+    if (this.$q.localStorage.getItem('maxWin24')) {
+      this.getLocal('maxWin24')
+    }
   }
 }
 </script>
 
 <style>
+
+body {
+  font-size: 22px;
+}
 </style>
