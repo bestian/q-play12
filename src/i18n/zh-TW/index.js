@@ -13,5 +13,7 @@ export default {
   Play12: '玩湊12',
   play12: '湊12',
   play24: '湊24',
-  'use_all_four_cards_to_make_12': '使用全部四張牌來湊出12'
+  'use_all_four_cards_to_make_12': '使用全部四張牌來湊出12',
+  reset: '重玩一局',
+  'good!': '讚!'
 }
