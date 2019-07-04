@@ -17,18 +17,18 @@
             | {{$t('home')}}
         q-item(clickable='', @click.native="$router.push('/tutorial')", v-ripple='')
           q-item-section(avatar='')
-            q-icon(name='format_color_fill')
+            q-icon(name='contact_support')
           q-item-section
             | {{$t('Tutorial')}}
         q-item-label(header='') {{$t('game')}}
         q-item(clickable='', @click.native="$router.push('/play12')", v-ripple='')
           q-item-section(avatar='')
-            q-icon(name='format_color_fill')
+            q-icon(name='autorenew')
           q-item-section
             | {{$t('play12')}}
         q-item(clickable='', @click.native="$router.push('/play24')", v-ripple='')
           q-item-section(avatar='')
-            q-icon(name='format_color_fill')
+            q-icon(name='cached')
           q-item-section
             | {{$t('play24')}}
     q-page-container

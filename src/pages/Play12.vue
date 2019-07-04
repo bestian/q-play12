@@ -3,6 +3,12 @@
     q-toolbar
       q-toolbar-title
         | {{$t('use_all_four_cards_to_make_12')}}
+    q-toolbar(v-if = "myNum == 0")
+      q-toolbar-title {{$t('click_a_card')}}
+    q-toolbar(v-if = "myNum !== 0")
+      q-toolbar-title {{$t('click_an_operator')}}
+    q-toolbar(v-if = "lastWork")
+      q-toolbar-title {{lastWork}}
     .q-pa-md
       .row
         .col.col-6.col-md-3(v-if = "myNum != 0")
@@ -20,8 +26,8 @@
             q-card-actions(v-if = "myNum != 0")
               q-btn-group
                 q-btn(size = "lg" color ="green" @click = "count('+', c, idx)") +{{c}}
-                q-btn(size = "lg" color ="red" @click = "count('-', c, idx)") -{{c}}
-                q-btn(size = "lg" color ="green" @click = "count('*', c, idx)") ×{{c}}
+                q-btn(size = "lg" color ="teal" @click = "count('-', c, idx)") -{{c}}
+                q-btn(size = "lg" color ="purple" @click = "count('*', c, idx)") ×{{c}}
                 q-btn(size = "lg" color ="red" @click = "count('/', c, idx)") ÷{{c}}
 
       .q-pa-md
@@ -83,6 +89,7 @@ export default {
       console.log(this.cards)
       this.myNum = 0
       this.win = false
+      this.lastWork = ''
       this.$forceUpdate()
     },
     makecard: function () {
