@@ -3,6 +3,9 @@
     .q-pa-md.doc-container
       .row.item-center
         .col.text-center
+          img.image(src="../assets/app-icon.png")
+      .row.item-center
+        .col.text-center
           h3 {{ $t('Welcome') }}
       .row.item-center
         .col.text-center
@@ -17,4 +20,9 @@ export default {
 </script>
 
 <style>
+
+.image {
+  width: 50vmin;
+  height: 50vmin;
+}
 </style>

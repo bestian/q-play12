@@ -15,12 +15,12 @@
         .col.col-6.col-md-3(v-if = "myNum != 0")
           q-card.my-card
             q-card-section.bg-primary.text-white
-              q-btn(@click = "makecard()")
+              q-btn(color = "green" @click = "makecard()")
                 .text-h3 {{ myNum }}
         .col.col-6.col-md-3(v-for = "(c, idx) in cards" v-show = "c != 0")
           q-card.my-card
             q-card-section.bg-primary.text-white
-              q-btn(v-if ="myNum == 0" @click = "myNum = c; use(idx)")
+              q-btn(color = "green" v-if ="myNum == 0" @click = "myNum = c; use(idx)")
                 .text-h3 {{ c }}
               span.text-h3(v-else) {{ c }}
 
@@ -30,6 +30,9 @@
                 q-btn(size = "lg" color ="teal" @click = "count('-', c, idx)") -{{c}}
                 q-btn(size = "lg" color ="purple" @click = "count('*', c, idx)") ×{{c}}
                 q-btn(size = "lg" color ="red" @click = "count('/', c, idx)") ÷{{c}}
+    .q-pa-md
+      .row
+        q-btn(size="xl" push :label = "$t('Play12')" color="green" @click="$router.push('/play12')")
 
     win(v-show="win")
 </template>
@@ -88,14 +91,10 @@ export default {
     },
     reset: function () {
       console.log('reset')
-      for (var i = 0; i < 4; ++i) {
-        this.cards[i] = Math.floor(Math.random() * this.max) + 1
-      }
       console.log(this.cards)
       this.myNum = 0
       this.win = false
       this.lastWork = ''
-      this.$forceUpdate()
     },
     makecard: function () {
       console.log('makecard')

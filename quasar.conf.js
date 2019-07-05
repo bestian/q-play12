@@ -110,8 +110,8 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'Play12',
-        // short_name: 'Play12',
+        name: 'Play12',
+        short_name: 'Play12',
         // description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
@@ -148,8 +148,8 @@ module.exports = function (ctx) {
     },
 
     cordova: {
-      // id: 'tw.bestian.play12',
-      // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
+      id: 'tw.bestian.play12',
+      noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
 
     electron: {

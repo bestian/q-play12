@@ -14,12 +14,12 @@
         .col.col-6.col-md-3(v-if = "myNum != 0")
           q-card.my-card
             q-card-section.bg-primary.text-white
-              q-btn(@click = "makecard()")
+              q-btn(color = "green" @click = "makecard()")
                 .text-h3 {{ myNum }}
         .col.col-6.col-md-3(v-for = "(c, idx) in cards" v-show = "c != 0")
           q-card.my-card
             q-card-section.bg-primary.text-white
-              q-btn(v-if ="myNum == 0" @click = "myNum = c; use(idx)")
+              q-btn(color = "green" v-if ="myNum == 0" @click = "myNum = c; use(idx)")
                 .text-h3 {{ c }}
               span.text-h3(v-else) {{ c }}
 

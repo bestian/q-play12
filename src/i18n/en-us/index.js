@@ -2,6 +2,34 @@
 // so you can safely delete all default props below
 
 export default {
+  '/': 'Home',
+  '/tutorial': 'Tutorial',
+  '/play12': 'Play 12',
+  '/play24': 'Play 24',
+  home: 'Home',
+  game: 'Game',
+  lang: 'Language',
   failed: 'Action failed',
-  success: 'Action was successful'
+  success: 'Action was successful',
+  Welcome: 'Welcome to play 12',
+  Tutorial: 'Bigin Tutorial',
+  John: 'John',
+  'click_4': 'Tutorial started！Click「4」',
+  'click_-3': 'Click「-3」',
+  'click_1': 'Click「1」',
+  'click_*2': 'Click「×2」',
+  'click_2': 'Click「2」',
+  'click_*6': 'Click「×6」',
+  'tutorial_end': 'You win！Tutorial ended, have fun!',
+  Play12: 'Play 12',
+  play12: 'Play 12',
+  play24: 'Play 24',
+  'use_all_four_cards_to_make_12': 'Use all 4 cards to make 12',
+  'use_all_four_cards_to_make_24': 'Use all 4 cards to make 24',
+  'click_a_card': 'Click a card',
+  'click_an_operator': '請按其他牌下方的加減乘除來運算',
+  reset: 'Play Again',
+  'good!': 'Good!',
+  maxWins: 'wins',
+  'maxWinsRecord': 'Chain Wins:'
 }
