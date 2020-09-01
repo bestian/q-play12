@@ -68,8 +68,6 @@ export default {
       this.cards[idx] = 0
     },
     isWin: function () {
-      console.log(this.myNum)
-      console.log(this.cards)
       var ans = true
       for (var i = 0; i < this.cards.length; ++i) {
         if (this.cards[i] !== 0) { ans = false }
@@ -86,18 +84,15 @@ export default {
       setTimeout(this.reset, 2000)
     },
     reset: function () {
-      console.log('reset')
       for (var i = 0; i < 4; ++i) {
         this.cards[i] = Math.floor(Math.random() * this.max) + 1
       }
-      console.log(this.cards)
       this.myNum = 0
       this.win = false
       this.lastWork = ''
       this.$forceUpdate()
     },
     makecard: function () {
-      console.log('makecard')
       if (this.isWin()) {
         this.reset()
       }
@@ -110,7 +105,6 @@ export default {
       }
     },
     count: function (o, item, index) {
-      console.log('count')
       this.use(index)
       switch (o) {
         case '+':

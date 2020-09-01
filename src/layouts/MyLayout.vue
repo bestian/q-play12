@@ -70,17 +70,13 @@ export default {
       this.setLocal('maxWin24')
     },
     getLocal: function (n) {
-      console.log('get:' + n)
       this[n] = JSON.parse(this.$q.localStorage.getItem(n))
     },
     setLocal: function (n) {
-      console.log('set:' + n)
       this.$q.localStorage.set(n, JSON.stringify(this[n]))
-      // console.log(this.$q.localStorage.getItem(n))
     }
   },
   mounted () {
-    // console.log(this.$q.localStorage.getItem(n))
     if (this.$q.localStorage.getItem('maxWin12')) {
       this.getLocal('maxWin12')
     }

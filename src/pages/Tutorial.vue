@@ -75,8 +75,6 @@ export default {
       this.step++
     },
     isWin: function () {
-      console.log(this.myNum)
-      console.log(this.cards)
       var ans = true
       for (var i = 0; i < this.cards.length; ++i) {
         if (this.cards[i] !== 0) { ans = false }
@@ -90,14 +88,11 @@ export default {
       setTimeout(this.reset, 3000)
     },
     reset: function () {
-      console.log('reset')
-      console.log(this.cards)
       this.myNum = 0
       this.win = false
       this.lastWork = ''
     },
     makecard: function () {
-      console.log('makecard')
       if (this.isWin()) {
         this.reset()
       }
@@ -110,7 +105,6 @@ export default {
       }
     },
     count: function (o, item, index) {
-      console.log('count')
       this.use(index)
       switch (o) {
         case '+':
