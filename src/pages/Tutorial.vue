@@ -6,7 +6,6 @@
     q-toolbar
       q-chat-message(
         :name="$t('John')"
-        avatar="../assets/john.png"
         :text="[$t(hints[step])]")
     q-toolbar(v-if = "lastWork")
       q-toolbar-title {{lastWork}}
